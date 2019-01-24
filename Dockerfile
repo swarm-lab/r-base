@@ -1,6 +1,6 @@
 ## largely based on rocker r-base image
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER "Tobias Verbeke" tobias.verbeke@openanalytics.eu
 
@@ -10,7 +10,7 @@ RUN useradd docker \
 	&& chown docker:docker /home/docker \
 	&& addgroup docker staff
 
-RUN apt-get update \ 
+RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 		ed \
 		less \
@@ -34,7 +34,7 @@ ENV LANG en_US.UTF-8
 RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu xenial/" > /etc/apt/sources.list.d/cran.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
-ENV R_BASE_VERSION 3.4.4
+ENV R_BASE_VERSION 3.5.2
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
 ## Also set a default CRAN repo, and make sure littler knows about it too
