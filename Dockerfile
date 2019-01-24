@@ -1,6 +1,6 @@
 ## largely based on rocker r-base image
 
-FROM ubuntu:18.04
+FROM ubuntu:18.10
 
 MAINTAINER "Tobias Verbeke" tobias.verbeke@openanalytics.eu
 
@@ -20,6 +20,7 @@ RUN apt-get update \
 		ca-certificates \
 		apt-transport-https \
 		gsfonts \
+		gnupg \
 	&& rm -rf /var/lib/apt/lists/*
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
@@ -31,7 +32,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 ## Use Debian unstable via pinning -- new style via APT::Default-Release
-RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu xenial/" > /etc/apt/sources.list.d/cran.list
+RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu cosmic-cran35/" > /etc/apt/sources.list.d/cran.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
 ENV R_BASE_VERSION 3.5.2
