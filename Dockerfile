@@ -36,7 +36,8 @@ ENV LANG en_US.UTF-8
 
 ## Use Debian unstable via pinning -- new style via APT::Default-Release
 RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu eoan-cran35/" > /etc/apt/sources.list.d/cran.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
 
 ENV R_BASE_VERSION 3.6.2
 
