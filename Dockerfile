@@ -1,6 +1,6 @@
 ## largely based on rocker r-base image
 
-FROM ubuntu:18.10
+FROM ubuntu:19.10
 
 MAINTAINER "Tobias Verbeke" tobias.verbeke@openanalytics.eu
 
@@ -35,10 +35,10 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 ## Use Debian unstable via pinning -- new style via APT::Default-Release
-RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu cosmic-cran35/" > /etc/apt/sources.list.d/cran.list
+RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu eoan-cran35/" > /etc/apt/sources.list.d/cran.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
-ENV R_BASE_VERSION 3.5.2
+ENV R_BASE_VERSION 3.6.2
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
 ## Also set a default CRAN repo, and make sure littler knows about it too
