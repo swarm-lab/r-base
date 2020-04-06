@@ -1,5 +1,4 @@
-## largely based on rocker r-base image
-## largely based on openanalytics r-base image
+## largely based on openanalytics r-base image, itself largely based on rocker r-base image
 
 FROM ubuntu:19.10
 
