@@ -1,8 +1,9 @@
 ## largely based on rocker r-base image
+## largely based on openanalytics r-base image
 
 FROM ubuntu:19.10
 
-MAINTAINER "Tobias Verbeke" tobias.verbeke@openanalytics.eu
+MAINTAINER "Simon Garnier" garnier@njit.edu
 
 ## Add user to 'staff' group, granting them write privileges to /usr/local/lib/R/site.library
 RUN useradd docker \
@@ -39,7 +40,7 @@ RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu eoan-cran35/" > /etc/
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 
 
-ENV R_BASE_VERSION 3.6.2
+ENV R_BASE_VERSION 3.6.3
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
 ## Also set a default CRAN repo, and make sure littler knows about it too
